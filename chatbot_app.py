@@ -26,7 +26,7 @@ def get_bot_response(user_input):
     if user_input in faq_dict:
         return faq_dict[user_input]
     else:
-        close_matches = difflib.get_close_matches(user_input, questions, n=1, cutoff=0.6)
+        close_matches = difflib.get_close_matches(user_input, questions, n=1, cutoff=0.3)
         if close_matches:
             closest = close_matches[0]
             return f"Did you mean: **{closest}**?\n\n{faq_dict[closest]}"
